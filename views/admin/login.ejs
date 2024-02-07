@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headerVendor.ejs')%>
+</head>
+
+<body>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper log-wrap">
+
+        <div class="row">
+
+            <!-- Login Banner -->
+            <div class="col-md-6 login-bg">
+                <div class="owl-carousel login-slide owl-theme">
+                    <div class="welcome-login">
+                        <div class="login-banner">
+                            <img src="assets/img/login-img.png" class="img-fluid" alt="Logo">
+                        </div>
+                        <div class="mentor-course text-center">
+                            <h2>Welcome to <br>DreamsLMS Courses.</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                    <div class="welcome-login">
+                        <div class="login-banner">
+                            <img src="assets/img/login-img.png" class="img-fluid" alt="Logo">
+                        </div>
+                        <div class="mentor-course text-center">
+                            <h2>Welcome to <br>DreamsLMS Courses.</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                    <div class="welcome-login">
+                        <div class="login-banner">
+                            <img src="assets/img/login-img.png" class="img-fluid" alt="Logo">
+                        </div>
+                        <div class="mentor-course text-center">
+                            <h2>Welcome to <br>DreamsLMS Courses.</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Login Banner -->
+
+            <div class="col-md-6 login-wrap-bg">
+
+                <!-- Login -->
+                <div class="login-wrapper">
+                    <div class="loginbox">
+                        <div class="w-100">
+                            <div class="img-logo">
+                                <img src="images/logo.png" class="img-fluid" alt="Logo">
+                                <div class="back-home">
+                                    <a href="/">Back to Home</a>
+                                </div>
+                            </div>
+                            <h1>Sign into Your Account</h1>
+                            <form action="instructor-dashboard.html">
+                                <div class="input-block">
+                                    <label class="form-control-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="Enter your email address">
+                                </div>
+                                <div class="input-block">
+                                    <label class="form-control-label">Password</label>
+                                    <div class="pass-group">
+                                        <input type="password" class="form-control pass-input"
+                                            placeholder="Enter your password">
+                                        <span class="feather-eye toggle-password"></span>
+                                    </div>
+                                </div>
+                                <div class="forgot">
+                                    <span><a class="forgot-link" href="forgot-password.html">Forgot Password
+                                            ?</a></span>
+                                </div>
+                                <div class="remember-me">
+                                    <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Remember me
+                                        <input type="checkbox" name="radio">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-start" type="submit">Sign In</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="google-bg">
+                        <%- include("../partials/contactInfo.ejs") %>
+                    </div>
+                </div>
+                <!-- /Login -->
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /Main Wrapper -->
+
+    <%- include('../partials/footerVendor.ejs')%>
+
+</body>
+
+</html>

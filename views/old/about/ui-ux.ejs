@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headerVendor.ejs')%>
+        <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-body-secondary">
+    <%- include('../partials/navbar.ejs')%>
+        <div class="container py-5">
+            <h3 class="mt-5 mb-0 heading" style="color: #7588fd">UI/UX DESIGN</h3>
+            <div class="d-block pt-3">
+                <p class="fw-semibold">
+                    UI/UX DESIGNWelcome to the UI/UX track of our Codeathon! We are thrilled to have industry
+                    professionals and students alike joining us in this creative endeavour to shape the future of user
+                    interfaces and experiences. Whether you are a seasoned designer or just beginning your journey, this
+                    competition is an opportunity to showcase your talent, innovation, and commitment to creating
+                    user-friendly, inclusive digital solutions.
+                </p>
+                <h3 style="color: #7588fd">Competition Overview</h3>
+                <h5 style="color: #7588fd">Objective: </h5>
+                <p class="fw-semibold">
+                    Design themes and templates for both web and mobile
+                    applications, incorporating all essential UI elements, while prioritizing intuitiveness, appeal, and
+                    inclusivity.
+                </p>
+                <h5 style="color: #7588fd">Guidelines</h5>
+
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Theme and Template Requirements</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Design themes/templates for web and mobile applications.
+                                </li>
+                                <li>
+                                    Include all essential UI elements (buttons, forms, navigation, etc.).(details on the
+                                    codeathon website)
+                                </li>
+                                <li>
+                                    Ensure responsiveness for various screen sizes and devices.
+                                </li>
+                                <li>
+                                    Provide a cohesive and consistent design language.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Color Palette</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Create an intuitive, appealing, and colorful design.
+                                </li>
+                                <li>
+                                    Avoid using reds and oranges to consider users with color vision deficiencies.
+                                </li>
+                                <li>
+                                    Ensure sufficient color contrast for readability.
+                                </li>
+                                <li>
+                                    Use color choices that align with the intended application's purpose and brand.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Accessibility and Inclusivity</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Adhere to accessibility standards (WCAG) for usability by persons with disabilities.
+                                </li>
+                                <li>
+                                    Provide text alternatives for non-text content.
+                                </li>
+                                <li>
+                                    Ensure proper contrast ratios for text and background colors.
+                                </li>
+                                <li>
+                                    Include keyboard navigation and focus indicators.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Usability and User-Friendly Design</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Prioritize user-friendly navigation and information architecture.
+                                </li>
+                                <li>
+                                    Optimize for an intuitive user experience.
+                                </li>
+                                <li>
+                                    Minimize cognitive load by simplifying complex interactions.
+                                </li>
+                                <li>
+                                    Consider user personas and design for various user needs.
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Typography</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Use readable fonts with different weights for hierarchy.
+                                </li>
+                                <li>
+                                    Ensure appropriate font sizes for different screen sizes.
+                                </li>
+                                <li>
+                                    Include line spacing and letter spacing for improved readability.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Iconography</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Create clear and recognizable icons for common actions.
+                                </li>
+                                <li>
+                                    Ensure consistency in iconography style throughout the design.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Animation and Interactivity:</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Incorporate subtle and purposeful animations to enhance user engagement.
+                                </li>
+                                <li>
+                                    Avoid excessive animations that may distract or cause discomfort.
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Forms and Input Elements:</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Design user-friendly forms with clear labels and instructions.
+                                </li>
+                                <li>
+                                    Ensure proper validation messages and error handling.
+                                </li>
+                                <li>
+                                    Consider adaptive placeholders for form fields.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Mobile-Specific Considerations:</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Prioritize a mobile-first design approach.
+                                </li>
+                                <li>
+                                    Optimize touch interactions for mobile devices.
+                                </li>
+                                <li>
+                                    Consider gestures and swiping for navigation.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Feedback and Error Handling:</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Provide clear feedback for user actions.
+                                </li>
+                                <li>
+                                    Design error messages that guide users toward resolution.
+                                </li>
+                                <li>
+                                    Ensure that users can easily recover from errors.
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Documentation:</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Include detailed documentation explaining the design choices.
+                                </li>
+                                <li>
+                                    Provide insights into the intended use cases for different components.
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Judging Criteria:</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    Judging will consider creativity, usability, and adherence to guidelines.
+                                </li>
+                                <li>
+                                    A diverse panel of judges with expertise in UI/UX design will evaluate submissions
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Ethical Considerations:</div>
+                            <ul style="list-style-type:disc;">
+
+                                <li>
+                                    We encourage designs that prioritize user privacy and data security.
+                                </li>
+                                <li>
+                                    We discourage designs that may promote harmful behaviors or stereotypes.
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Basic UI Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Buttons</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Primary buttons
+                                </li>
+                                <li>
+                                    Secondary buttons
+                                </li>
+                                <li>
+                                    Ghost buttons
+                                </li>
+                                <li>
+                                    Icon buttons
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">2.Navigation Elements</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Navigation bars
+                                </li>
+                                <li>
+                                    Sidebars
+                                </li>
+                                <li>
+                                    Breadcrumbs
+                                </li>
+                                <li>
+                                    Pagination links
+                                </li>
+                                <li>
+                                    Tabs
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Forms</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Input fields
+                                </li>
+                                <li>
+                                    Text
+                                </li>
+                                <li>
+                                    Checkboxes and radio buttons
+                                </li>
+                                <li>
+                                    Dropdown menus
+                                </li>
+                                <li>
+                                    Switches
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Icons</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Icon sets for common actions
+                                </li>
+                                <li>
+                                    Social media icons
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Typography</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Headings (H1 to H6)
+                                </li>
+                                <li>
+                                    Paragraphs
+                                </li>
+                                <li>
+                                    Lists
+                                </li>
+                                <li>
+                                    Blockquotes
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Images</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Image placeholders
+                                </li>
+                                <li>
+                                    Image galleries
+                                </li>
+                                <li>
+                                    Responsive images
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Media Players:</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Video players
+                                </li>
+                                <li>
+                                    Audio players
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Advanced UI Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Modals/Dialogs:</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Popup windows for additional information or actions
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">9.Carousels/Sliders</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Image sliders
+                                </li>
+                                <li>
+                                    Content sliders
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Tabs</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Horizontal and vertical tabs </li>
+                                <li>
+                                    Icon tabs
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Accordions</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Expandable and collapsible content sections
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Tooltips</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Small informational pop-ups
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Data Presentation Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Tables</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Responsive data tables
+                                </li>
+                                <li>
+                                    Sortable and filterable columns
+                                </li>
+                                <li>
+                                    Responsive data tables
+                                </li>
+                                <li>
+                                    Sortable and filterable columns
+                                </li>
+                                <li>
+                                    Row actions (edit, delete)
+                                </li>
+                                <li>
+                                    Pagination for large datasets
+                                </li>
+                                <li>
+                                    Table headers for column names
+                                </li>
+                                <li>
+                                    Highlighted rows on hover
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Charts and Graphs</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Bar charts
+                                </li>
+                                <li>
+                                    Line charts
+                                </li>
+                                <li>
+                                    Pie charts
+                                </li>
+                                <li>
+                                    Doughnut charts
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Maps</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Interactive maps with markers
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Progress Indicators</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Linear progress bars
+                                </li>
+                                <li>
+                                    Circular progress indicators
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Countdown Timers</div>
+                            <ul style="list-style-type:disc;">
+                                <li>
+                                    Countdown timers for events or promotions </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Dashboard-Specific Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Widgets</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Small, modular components displaying specific information</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Cards</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Containers for organized content or data</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Data Tiles</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Visual representations of data metrics</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Sidebar Navigation</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Navigation for specific sections of a dashboard</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Reports and Analytics Elements</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Graphs, charts, and data visualizations</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Dashboard Controls</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Filters, sliders, and dropdowns for data manipulation</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Interactive UI Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Drag-and-Drop</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Elements that can be moved or rearranged using drag-and-drop interactions.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Resizable Panels</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Sections or panels that can be resized by the user.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Toggle Switches</div>
+                            <ul style="list-style-type:disc;">
+                                <li>On/off switches for activating or deactivating a feature.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Steppers</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Incremental or decremental input controls.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Navigation Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Mega Menus</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Large, multi-column dropdown menus.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Sticky Navigation</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Navigation bars that remain fixed as the user scrolls.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Multimedia Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Image Carousels</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Rotating displays of images or content.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Lightbox</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Overlay for displaying larger images or media.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Social Interaction Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Social Share Buttons</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Buttons for sharing content on social media platforms.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Comment Sections</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Areas for user comments and discussions.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+
+                <h5 class="mt-4" style="color: #7588fd">E-commerce Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Product Cards</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Displaying key information about products.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Shopping Cart</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Section showing selected items for purchase.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Checkout Forms</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Forms for entering shipping and payment details.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Authentication Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Login/Registration Forms</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Forms for user authentication and account creation.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+
+                <h5 class="mt-4" style="color: #7588fd">Accessibility Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Text-to-Speech</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Integration for converting text to spoken words.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">High Contrast Mode</div>
+                            <ul style="list-style-type:disc;">
+                                <li>A switch to enable a high-contrast color scheme.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+
+                <h5 class="mt-4" style="color: #7588fd">Animation Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Parallax Scrolling</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Background elements moving at a different speed than the foreground.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Hover Effects</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Changes in appearance when the cursor hovers over an element.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+
+                <h5 class="mt-4" style="color: #7588fd">Mobile-Specific Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Hamburger Menu</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Three-bar icon indicating a hidden menu.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Swipe Gestures</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Navigation or interaction triggered by swiping.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+
+                <h5 class="mt-4" style="color: #7588fd">Miscellaneous Elements</h5>
+
+                <ol class="list-group list-group-numbered">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">QR Code Integration</div>
+                            <ul style="list-style-type:disc;">
+                                <li>QR codes for quick access to information or links.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Captcha</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Verification mechanism to ensure human interaction.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Animated Loaders</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Visual cues indicating that content is loading.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Error Pages</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Custom pages for 404 errors or other issues.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Legal and Privacy Links</div>
+                            <ul style="list-style-type:disc;">
+                                <li>Links to terms of service, privacy policy, etc.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </div>
+
+        <%- include("../partials/footerVendor.ejs") %>
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+</body>
+
+</html>

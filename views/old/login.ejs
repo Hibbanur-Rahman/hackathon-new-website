@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/headerVendor.ejs')%>
+  </head>
+  <style>
+    .heading {
+      font-family: "ethnocentric";
+    }
+  </style>
+  <body>
+    <%- include('./partials/navbar.ejs')%>
+    <div class="m-0 p-0 success-page row justify-content-center align-items-center ">
+      <div class="col-lg-6">
+        <h3 class="mt-3 mb-0 heading" style="color: #7588fd">
+          Organizer login
+        </h3>
+        <p class="text-secondary mt-3 mb-4">
+          To manage hacker, please provide your email and password.
+        </p>
+
+        <form method="POST" action="/login" class="login-form" id="loginForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              name="email"
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="*********"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mb-3">Login</button>
+        </form>
+
+       <%- include('./partials/contactMessageVendor.ejs')%>
+      </div>
+    </div>
+    <%- include("./partials/footerVendor.ejs") %>
+    <script>
+      $(document).ready(function () {
+        $("#loginForm").submit(function (event) {
+          event.preventDefault();
+
+          validateAndSubmit();
+        });
+      });
+
+      function validateAndSubmit() {
+        const email = $("#email").val();
+        const password = $("#password").val();
+
+        if (!email || !password) {
+          toastr.error("Please fill in both email and password fields.");
+        } else {
+          $("#loginForm").off("submit").submit();
+        }
+      }
+    </script>
+  </body>
+</html>

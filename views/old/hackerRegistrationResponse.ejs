@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/headerVendor.ejs')%>
+  </head>
+
+  <body class="bg-body-secondary">
+    <%- include('./partials/navbar.ejs')%>
+    <div
+      class="success-page row p-0 justify-content-center align-items-center py-5"
+    >
+      <div class="col-lg-6">
+        <div
+          class="card border-0 d-flex justify-content-center align-items-center w-auto p-5 rounded-4"
+        >
+          <i class="bi bi-check-circle-fill fs-1"></i>
+          <h3 class="m-0 p-0 text-dark text-center">
+            Application submitted successfully!
+          </h3>
+          <p class="m-0 p-0 text-center text-secondary mt-3 mb-5">
+            Thank you for submitting your application. Our team will now verify
+            the information you provided. You can check the status of your
+            application using either the Team ID or your mobile number.
+          </p>
+          <h4 class="mb-4 p-0 text-secondary">Team ID: <%= teamId %></h4>
+
+          <a href="/status" class="btn btn-primary text-light w-auto mt-2"
+            >Check status</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/footerVendor.ejs')%>
+  </body>
+</html>

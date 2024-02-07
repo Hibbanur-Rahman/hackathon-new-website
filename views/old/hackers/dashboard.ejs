@@ -1,0 +1,80 @@
+<!DOCTYPE >
+<html lang="en">
+  <head>
+    <%- include('../partials/headerVendor.ejs')%>
+    <link rel="stylesheet" href="./css/counter.css" />
+    <style>
+      .heading {
+        font-family: "ethnocentric";
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs')%>
+    <div class="row align-items-center justify-content-center pt-5">
+      <div class="col-8 mt-5 pt-3">
+        <h3 class="mt-3 mb-0 heading" style="color: #7588fd">Welcome!</h3>
+        <p class="text-secondary mt-3 mb-5" style="font-size: larger">
+          Dashboard to manager hackers.
+        </p>
+        <div class="container mt-5">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-3">
+              <a href="/all-hackers" class="text-decoration-none">
+                <div class="card-counter primary">
+                  <div class="row">
+                    <div class="col-lg-6 count-i-container">
+                      <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="col-lg-6">
+                      <span class="count-numbers"><%= allHackersCount %></span>
+                      <span class="count-name">All hackers</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a href="/verified-hackers" class="text-decoration-none">
+                <div class="card-counter success">
+                  <div class="row">
+                    <div class="col-lg-6 count-i-container">
+                      <i class="fa-regular fa-circle-check"></i>
+                    </div>
+                    <div class="col-lg-6">
+                      <span class="count-numbers">
+                        <%= verifiedHackersCount %>
+                      </span>
+                      <span class="count-name">Verified</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-md-3">
+              <a href="/pending-hackers" class="text-decoration-none">
+                <div class="card-counter danger">
+                  <div class="row">
+                    <div class="col-lg-6 count-i-container">
+                      <i class="fa-solid fa-hourglass-half"></i>
+                    </div>
+                    <div class="col-lg-6">
+                      <span class="count-numbers">
+                        <%= pendingHackersCount %></span
+                      >
+                      <span class="count-name">Pending</span>
+                    </div>
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include("../partials/footerVendor.ejs") %>
+    <script></script>
+  </body>
+</html>

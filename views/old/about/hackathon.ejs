@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/headerVendor.ejs')%>
+        <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-body-secondary">
+    <%- include('../partials/navbar.ejs')%>
+        <div class="container py-5">
+            <h3 class="mt-5 mb-0 heading" style="color: #7588fd">About Hacathon</h3>
+
+            <div class="row pt-5">
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card card-body border-0 custom-card">
+                        <div class="d-block text-center py-4">
+                            <img src="../images/content-creation.png" alt="" width="50%">
+                        </div>
+                        <div class="d-block">
+                            <h5 class="text-center" style="color: #7588fd">
+                                2D, 3D, AND AR/VR CONTENT CREATION
+                            </h5>
+                            <p class="text-center">
+                                Are you passionate about transforming the education
+                                landscape with cutting-edge technology? Here's your
+                                chance to shine... <a href="/ar-vr">see more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card card-body border-0 custom-card">
+                        <div class="d-block text-center py-4">
+                            <img src="../images/ui-ux.png" alt="" width="50%">
+                        </div>
+                        <div class="d-block">
+                            <h5 class="text-center" style="color: #7588fd">
+                                UI/UX DESIGN
+                            </h5>
+                            <p class="text-center">
+                                Welcome to the UI/UX track of our Codeathon! We are
+                                thrilled to have industry professionals and students alike
+                                joining us in this creative endeavour to shape... <a href="/ui-ux">see more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3 h-100">
+                    <div class="card card-body border-0 custom-card">
+                        <div class="d-block text-center py-4">
+                            <img src="../images/ml.png" alt="" width="50%">
+                        </div>
+                        <div class="d-block">
+                            <h5 class="text-center" style="color: #7588fd">
+                                MACHINE LEARNING
+                            </h5>
+                            <p class="text-center">
+                                You're invited to our thrilling Codeathon! Join us for a day
+                                of innovation, collaboration, and groundbreaking
+                                solutions. Unleash your coding... <a href="/machineLearning">see more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="card card-body border-0 custom-card">
+                        <div class="d-block text-center py-4">
+                            <img src="../images/gd.png" alt="" width="50%">
+                        </div>
+                        <div class="d-block">
+                            <h5 class="text-center" style="color: #7588fd">
+                                GAME DEVELOPMENT
+                            </h5>
+                            <p class="text-center">
+                                Welcome to the Inclusive Educational Game
+                                Development Track, where talented developers have the
+                                unique opportunity to create mdall, engaging games... <a href="/gameDevelopment">see more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("../partials/footerVendor.ejs") %>
+            <script>
+                function goBack() {
+                    window.history.back();
+                }
+            </script>
+</body>
+
+</html>

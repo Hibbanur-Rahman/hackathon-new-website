@@ -1,0 +1,339 @@
+<html>
+
+<head>
+  <%- include('./partials/headerVendor.ejs')%>
+</head>
+
+<body>
+  <%- include('./partials/navbar.ejs')%>
+    <!--=========== Home Section ===========-->
+    <div class="home-section row m-0 pb-5">
+      <div class="col-12 col-lg-7 ps-3 ps-md-5">
+        <h1 class="m-0 p-0 text-light heading-text">Join Coding Carnival</h1>
+        <div class="w-auto p-0 m-0 text-light">
+          <span class="typing w-auto p-0 m-0 fs-1"></span>
+        </div>
+
+        <p class="textRegistartionDate m-0 p-0 text-light fs-5 mt-5 mb-4">
+          Join us on 16th February 2024 with over 300+ students from across the
+          nation for 2 days of creation, innovation, & fun.
+        </p>
+
+        <div class="m-0 p-0 d-flex">
+          <a href="/hacker-registration"
+            class="judges btn btn-lg d-flex position-relative align-items-center justify-content-center overflow-hidden text-light border border-2">
+            <span>Register</span>
+            <div class="overlay position-absolute d-flex align-items-center justify-content-center overflow-hidden">
+              Hacker registration
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-md-5 col-lg-5 pt-5 pt-md-0">
+        <div class="calendar">
+          <div class="calendar-header">
+            <span class="month-picker" id="month-picker"> May </span>
+            <div class="year-picker" id="year-picker">
+              <span class="year-change" id="pre-year">
+                <pre class="m-0 p-0"><</pre>
+              </span>
+              <span id="year">2020 </span>
+              <span class="year-change" id="next-year">
+                <pre class="m-0 p-0">></pre>
+              </span>
+            </div>
+          </div>
+
+          <div class="calendar-body">
+            <div class="calendar-week-days">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+          </div>
+          <div class="calendar-footer"></div>
+          <div class="date-time-formate">
+            <div class="day-text-formate">TODAY</div>
+            <div class="date-time-value">
+              <div class="time-formate">01:41:20</div>
+              <div class="date-formate">03 - march - 2022</div>
+            </div>
+          </div>
+          <div class="month-list"></div>
+        </div>
+      </div>
+      <div class="row m-0 p-0 d-flex align-items-center justify-content-center mt-5 pb-2">
+        <p class="m-0 p-0 text-light w-auto pb-2">
+          Follow us on social media for updates
+        </p>
+        <div class="row m-0 p-0 d-flex align-items-center justify-content-center">
+          <i class="fa-brands fa-instagram w-auto fs-1 text-light"></i>
+          <i class="fa-brands fa-linkedin-in w-auto fs-1 text-light"></i>
+          <i class="fa-brands fa-twitter w-auto fs-1 text-light"></i>
+          <i class="fa-brands fa-facebook w-auto fs-1 text-light"></i>
+        </div>
+      </div>
+    </div>
+
+    <!--=========== Faq Section ===========-->
+    <div id="faqs"
+      class="faq container-fluid m-0 p-0 d-flex align-items-center justify-content-center pt-md-5 overflow-x-hidden">
+      <div class="col-12 col-lg-9 col-md-9 m-0 p-0 pt-5 mt-5 mb-5">
+        <div class="row m-0 p-0 mb-5">
+          <div class="col-12 col-md-7 col-lg-7">
+            <h1 class="m-0 p-0 pb-3 faq-heading">What is Coding Carnival?</h1>
+            <p class="m-0 p-0 fs-5 carnivalDescription" data-aos="fade-right">
+              Coding Carnival is 2 days long running code-a-thon will be held on
+              February 16th to 17th , We calls for artists, coders, designers,
+              tech evangelists, creatives, and developers from all disciplines
+              to take a part to win awesome prizes and collaborate with other
+              developers . Throughout the weekend coders at Coding Carnival will
+              have unique opportunities to learn from each other trying hands in
+              new technologies We are determined to have an all-inclusive and
+              diverse group of students attending.
+            </p>
+          </div>
+          <div class="col-12 col-md-5 col-lg-5 d-flex align-items-center justify-content-center mt-4 mt-md-0">
+            <img class="img-fluid codeImgLogo" src="./images/codeImg_1.png" alt="" data-aos="fade-left" />
+          </div>
+        </div>
+
+        <div class="row m-0 p-0 overflow-hidden">
+          <div class="col-12 col-lg-6">
+            <div class="faq-list col-12 col-lg-10 mt-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem1" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">What is a Code-a-thon?</p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem1">
+                <div
+                  class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0 rounded-0 rounded-bottom-2">
+                  A code-a-thon is a 2 days collaborative event where
+                  programmers from across the nation come together to
+                  collectively design functional UI/UX interfaces, develop
+                  Machine Learning content, engage in game development, and
+                  create written automation by the conclusion of the event.
+                </div>
+              </div>
+            </div>
+            <div class="faq-list col-12 col-lg-10 mt-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem2" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">Who can attend?</p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem2">
+                <div class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0">
+                  The Coding Carnival welcomes participants from any location,
+                  including undergraduates, postgraduates, and industry experts.
+                </div>
+              </div>
+            </div>
+            <div class="faq-list col-12 col-lg-10 mt-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem3" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">
+                    I am a first time coder, what should i do?
+                  </p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem3">
+                <div
+                  class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0 rounded-0 rounded-bottom-2">
+                  No worries, we love to welcome first time coders and start
+                  their coding journey from this code-a-thon. We have some
+                  awesome workshops and events which will help you get started
+                  with code-a-thon and coding in general.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="faq-list col-12 col-lg-10 mt-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem4" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">How team formation works?</p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem4">
+                <div class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0">
+                  Teams for the code-a-thon can consist of either solo
+                  participants or a maximum of four members. If you don't
+                  already have a team, there will be ample opportunities for you
+                  to connect with fellow coders and form a team during the
+                  event.
+                </div>
+              </div>
+            </div>
+            <div class="faq-list col-12 col-lg-10 mt-lg-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem5" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">
+                    How to register myself in the code-a-thon?
+                  </p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem5">
+                <div
+                  class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0 rounded-0 rounded-bottom-2">
+                  All you need is to fill our form above, we will guide you
+                  through everything there.
+                </div>
+              </div>
+            </div>
+            <div class="faq-list col-12 col-lg-10 mt-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem6" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">I have more questions?</p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem6">
+                <div class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0">
+                  Reach us directly at (meity.2p@manuu.edu.in or +91 99731 52523) we would happy to help you.
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="faq-list col-12 col-lg-10 mt-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem7" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">Can i volunteer?</p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem7">
+                <div
+                  class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0 rounded-0 rounded-bottom-2">
+                  Yes we are actively looking for volunteers, fill the form (in
+                  footer section) we will be glad to have you.
+                </div>
+              </div>
+            </div>
+            <div class="faq-list col-12 col-lg-10 mt-3 mb-3" data-aos="fade-up" data-aos-duration="2000">
+              <a class="text-decoration-none text-black" data-bs-toggle="collapse" href="#listItem8" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+                <div class="faq-list-item rounded-2 d-flex align-items-center justify-content-between p-3">
+                  <p class="m-0 p-0 w-auto fs-5">Will there be swag?</p>
+                  <i class="fas fa-plus"></i>
+                </div>
+              </a>
+              <div class="collapse" id="listItem8">
+                <div class="faq-list-desc text-secondary fs-5 text-opacity-75 card card-body border-0">
+                  Apologies for the inconvenience, but unfortunately, participants will not be receiving any swag.
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--=========== Prize Section ===========-->
+    <div id="prizes" class="prize-section container-fluid overflow-hidden">
+      <div class="prize-section-card card border-0 bg-body-secondary p-5">
+        <h1 class="m-0 p-0 text-center mb-5">Prize section</h1>
+
+        <div class="row m-0 p-0 mb-5">
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fas fa-4x fa-trophy" style="color: #a239ea"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">Overall First</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              First Overall prize will be given to a project that outstands all
+              other submission
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fa-solid fa-medal fa-4x" style="color: #39a2db"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">Overall Second</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              Second Overall prize will be given to the second best project of
+              the code-a-thon
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fa-solid fa-person-skiing-nordic fa-4x" style="color: #ff616d"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">Overall Third</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              Best third overall project of the code-a-thon will win some
+              awesome prizes
+            </p>
+          </div>
+        </div>
+        <div class="row m-0 p-0 mb-5">
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fa-brands fa-wpbeginner fa-3x" style="color: #3c8dad"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">Best Solo</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              You project will qualify for this prize if you participate alone
+              without a team though we encourage you to participate with a team
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fas fa-trophy fa-4x" style="color: #a239ea"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">Best Beginner</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              Your project will qualify for this category if atleast 50%
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fa-solid fa-book-open fa-4x" style="color: #bf1363"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">Best UI/UX</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              Project with most creative designs will be UI/UX track
+            </p>
+          </div>
+        </div>
+        <!-- <div class="row m-0 p-0 mb-5">
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fas fa-male fa-4x" style="color: #ff96ad"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">Best Web App with Qoom</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              Must use qoom in your project to win this category
+            </p>
+          </div>
+          <div class="col-12 col-lg-4 m-0 p-0 p-lg-3 pe-lg-5 mt-4 mb-4 mt-lg-0 mb-lg-0" data-aos="fade-up">
+            <i class="fas fa-user-friends fa-4x" style="color: #e4bad4"></i>
+            <h2 class="m-0 p-0 mt-3 mb-2">More prizes</h2>
+            <p class="m-0 p-0 fs-5 text-secondary">
+              More prizes will be revealed later
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <!--=========== Sponsor Section ===========-->
+    <div
+      class="sponsor container-fluid d-flex align-items-center justify-content-center flex-column pt-5 overflow-hidden">
+      <p class="m-0 p-0 fs-1">Sponsors & Partners</p>
+      <div class="row m-0 p-0">
+        <img class="img-fluid manuu-logo m-5" src="./images/manuu-logo.png" alt="" data-aos="fade-right" />
+
+        <img class="img-fluid meity-logo m-5" src="./images/edeekshaam-logo.png" alt="" data-aos="fade-left" />
+      </div>
+    </div>
+
+    <!--=========== Footer Section ===========-->
+    <%- include('./partials/footerVendor.ejs')%>
+</body>
+
+</html>

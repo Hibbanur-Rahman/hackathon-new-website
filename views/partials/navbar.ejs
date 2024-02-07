@@ -1,0 +1,57 @@
+<!-- Header -->
+<header class="header">
+  <div class="header-fixed">
+    <nav class="navbar navbar-expand-lg header-nav scroll-sticky">
+      <div class="container">
+        <div class="navbar-header">
+          <a id="mobile_btn" href="javascript:void(0);">
+            <span class="bar-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </a>
+          <a href="/" class="navbar-brand logo">
+            <img src="images/logo.png" class="img-fluid" alt="Logo">
+          </a>
+        </div>
+        <div class="main-menu-wrapper">
+          <div class="menu-header">
+            <a href="/" class="menu-logo">
+              <img src="images/logo.png" class="img-fluid" alt="Logo">
+            </a>
+            <a id="menu_close" class="menu-close" href="javascript:void(0);">
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
+          <ul class="main-nav">
+            <li class="has-submenu active">
+              <a class="" href="/">Home</a>
+            </li>
+            <li class="has-submenu">
+              <a class="" href="/hacker-registration">Apply</a>
+            </li>
+            <li class="has-submenu">
+              <a class="" href="/status">Status</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="nav header-navbar-rht">
+          <% if (loggedIn) { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link header-sign" href="/logout">Logout</a>
+            </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link header-sign" href="/login">Login</a>
+              </li>
+              <% } %>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /Header -->

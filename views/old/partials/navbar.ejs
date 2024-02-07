@@ -1,0 +1,125 @@
+<!--=========== Navbar Section ===========-->
+<div class="ctm-navbar row m-0 p-0 w-100 d-none d-md-flex d-lg-flex d-xl-flex">
+  <div class="nav-list col-8 m-0 p-0 d-flex">
+    <div class="nav-items w-auto ps-5 d-flex align-items-center justify-content-center">
+      <a href="/" class="text-decoration-none text-light">
+        <p class="m-0 p-0 fs-5 fw-bold logo-text">CodingCarnival</p>
+      </a>
+    </div>
+    <div class="nav-items w-auto ps-5 d-flex align-items-center justify-content-center">
+      <a href="#faqs" class="text-decoration-none text-light">
+        <p class="m-0 p-0 fs-5">FAQs</p>
+      </a>
+    </div>
+    <div class="nav-items w-auto ps-5 d-flex align-items-center justify-content-center">
+      <a href="#prizes" class="text-decoration-none text-light">
+        <p class="m-0 p-0 fs-5">Prizes</p>
+      </a>
+    </div>
+    <div class="nav-items w-auto ps-5 d-flex align-items-center justify-content-center">
+      <a href="/status" class="text-decoration-none text-light">
+        <p class="m-0 p-0 fs-5">Status</p>
+      </a>
+    </div>
+    <div class="dropdown nav-items w-auto ps-5 d-flex align-items-center justify-content-center">
+      <a class="dropdown-toggle text-decoration-none text-light fs-5" href="#" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        About
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/hackathon">Hackathon</a></li>
+        <li><a class="dropdown-item" href="/sponsors">Sponsors</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-4 d-flex align-items-center justify-content-end pe-5">
+    <% if (loggedIn) { %>
+      <a href="/dashboard" class="text-decoration-none text-light me-5">
+        <p class="m-0 p-0 fs-5">Dashboard</p>
+      </a>
+      <a href="/logout" class="btn btn-lg bg-light text-dark">Logout</a>
+      <% } else { %>
+        <a href="/login" class="btn btn-lg bg-light text-dark">Login</a>
+        <% } %>
+  </div>
+</div>
+
+<div class="ctm-Navbar row m-0 p-0 position-fixed d-flex d-md-none w-100 z-3">
+  <div class="m-0 p-0 navRow w-100 d-flex align-items-center justify-content-end">
+    <!-- Left side code -->
+    <div class="col-10 pt-3 pb-3">
+      <a href="/" class="text-decoration-none text-light">
+        <p class="fs-5 text-light fw-bold logo-text-mobile m-0">CodingCarnival</p>
+      </a>
+    </div>
+    <button class="btn nav-toggle-btn w-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+      aria-controls="offcanvasRight">
+      <img src="./images/toggleIcon.svg" alt="" />
+    </button>
+  </div>
+
+  <div class="offcanvas offcanvas-end nav-responsive" tabindex="-1" id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <!-- <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5> -->
+      <button type="button" class="border-0 closeNav bg-transparent text-light" data-bs-dismiss="offcanvas"
+        aria-label="Close">
+        <i class="fa-solid fa-xmark fa-2x"></i>
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="nav-list-responsive">
+        <div class="col-12 pt-3 pb-3">
+          <a href="/" class="text-decoration-none text-light">
+            <p class="m-0 p-0 fs-5">Home</p>
+          </a>
+        </div>
+        <div class="col-12 pt-3 pb-3">
+          <a href="#faqs" class="text-decoration-none text-light">
+            <p class="m-0 p-0 fs-5">FAQs</p>
+          </a>
+        </div>
+        <div class="col-12 pt-3 pb-3">
+          <a href="#prizes" class="text-decoration-none text-light">
+            <p class="m-0 p-0 fs-5">Prizes</p>
+          </a>
+        </div>
+        <div class="col-12 pt-3 pb-3">
+          <a href="/status" class="text-decoration-none text-light">
+            <p class="m-0 p-0 fs-5">Status</p>
+          </a>
+        </div>
+
+        <div class="dropdown col-12 pt-3 pb-3">
+
+          <a class="dropdown-toggle text-decoration-none text-light fs-5" data-bs-toggle="collapse"
+            href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            About
+          </a>
+
+          <div class="collapse" id="collapseExample">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a class="dropdown-item fs-5" href="/hackathon">Hackathon</a></li>
+                <li class="list-group-item"> <a class="dropdown-item fs-5" href="/sponsors">Sponsors</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add similar blocks for other navigation items -->
+        <div class="col-12 pt-3 pb-3">
+          <% if (loggedIn) { %>
+            <a href="/dashboard" class="text-decoration-none text-light">
+              <p class="m-0 p-0 fs-5">Dashboard</p>
+            </a>
+            <a href="/logout" class="btn btn-lg bg-light text-dark mt-4">Logout</a>
+            <% } else { %>
+              <a href="/login" class="btn btn-lg bg-light text-dark">Login</a>
+              <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

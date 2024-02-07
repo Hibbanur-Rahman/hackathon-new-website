@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/headerVendor.ejs')%>
+  </head>
+  <style>
+    .heading {
+      font-family: "ethnocentric";
+    }
+  </style>
+  <body>
+    <%- include('./partials/navbar.ejs')%>
+    <div
+      class="m-0 mb-5 p-0 pt-5  success-page row d-flex justify-content-center align-items-center"
+    >
+      <div class="col-lg-6" id="someContainer">
+        <h3 class="mt-3 mb-0 heading" style="color: #7588fd">
+          Hacker registration
+        </h3>
+        <p class="text-secondary mt-3 mb-4">
+          To register as a hacker, please provide required information.
+        </p>
+
+        <form
+          id="registrationForm"
+          action="/hacker-registration"
+          method="post"
+          enctype="multipart/form-data"
+          class="userRegistrationForm m-0 p-0"
+        >
+          <div class="mb-3">
+            <label for="numberOfMember" class="form-label"
+              >Number of team members</label
+            >
+
+            <select
+              class="form-select m-0 p-2"
+              aria-label="Default select example"
+              id="numberOfMember"
+              name="numberOfMember"
+              required
+            >
+              <option value="" disabled selected>
+                Please select an option
+              </option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+              <option value="4">Four</option>
+            </select>
+          </div>
+          <div class="details-container d-none" id="details-container">
+            <div
+              class="payment shadow rounded row m-0 p-0 mb-5"
+              id="payment-container"
+            >
+              <div class="mb-3" id="amount-container">
+                <h4 class="text-primary mt-2">Payment details</h4>
+                <p>
+                  Please pay <span>₹350</span> x
+                  <span class="number-of-selected-member"></span> =
+                  <span id="total-amount"></span>
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <img src="./images/upiImg1.jpeg" alt="upi img" />
+                </div>
+                <div
+                  class="col-lg-6 d-flex justify-space-between align-items-center upi-link-container"
+                >
+                  <span style="margin-right: 20px">Scan or</span>
+                  <p class="m-0 p-0">
+                    <a
+                      href="upi://pay?pa=upiaddress@okhdfcbank&pn=JohnDoe&cu=INR"
+                      class="text-decoration-none text-primary fw-bold"
+                      id="upi-link"
+                      style="font-size: 1.5rem"
+                      >Click Here</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="upi-Number" class="form-label"
+                  >UTR/UPI transaction ID or reference number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="upi-Number"
+                  aria-describedby="upi-Number"
+                  required
+                  name="upiNumber"
+                  maxlength="12"
+                  minlength="12"
+                  required
+                />
+                <span class="error text-danger" id="errorSpan"></span>
+                <small
+                  >(Enter 12 digit UTR/UPI transaction ID or reference
+                  number)</small
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="transactionImage" class="form-label"
+                  >Transaction receipt (screenshot)</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="transactionImage"
+                  aria-describedby="transactionImage"
+                  required
+                  name="transactionImage"
+                />
+              </div>
+            </div>
+
+            <div class="team-container shadow rounded row m-0 p-0 mb-5">
+              <h4 class="text-primary mt-2">Teams details</h4>
+              <div class="mb-3">
+                <label for="TeamName" class="form-label"
+                  >Name of the Team</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="TeamName"
+                  aria-describedby="TeamName"
+                  name="teamName"
+                  required
+                />
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="group-leader-name" class="form-label"
+                      >Teams leader's name</label
+                    >
+                    <input
+                      required
+                      type="text"
+                      class="form-control"
+                      id="group-leader-name"
+                      aria-describedby="group-leader-name"
+                      name="groupLeaderName"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="group-leader-Id" class="form-label"
+                      >Student/Employee ID number</label
+                    >
+                    <input
+                      required
+                      type="text"
+                      class="form-control"
+                      id="group-leader-Id"
+                      aria-describedby="group-leader-Id"
+                      name="groupLeaderId"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="group-leader-contact" class="form-label"
+                      >Team leader's contact number</label
+                    >
+                    <input
+                      required
+                      type="text"
+                      class="form-control"
+                      id="group-leader-contact"
+                      aria-describedby="group-leader-contact"
+                      name="groupLeaderContact"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label for="group-leader-email" class="form-label"
+                      >Teams leader's email</label
+                    >
+                    <input
+                      required
+                      type="email"
+                      class="form-control"
+                      id="group-leader-email"
+                      aria-describedby="group-leader-email"
+                      name="groupLeaderEmail"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="team-member-container shadow rounded row m-0 p-0 mb-5"
+            ></div>
+
+            <div
+              class="orgainization-container shadow rounded row m-0 p-0 mb-5"
+            >
+              <h4 class="text-primary mt-2">Organization details</h4>
+              <div class="mb-3">
+                <label for="institute" class="form-label">Name</label>
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  id="institute"
+                  aria-describedby="institute"
+                  name="instituteName"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="institute-address" class="form-label"
+                  >Address</label
+                >
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  id="institute-address"
+                  aria-describedby="institute-address"
+                  name="instituteAddress"
+                />
+              </div>
+            </div>
+
+            <div class="hackathon-container shadow rounded row m-0 p-0 mb-5">
+              <h4 class="text-primary mt-2">Hackathon details</h4>
+              <div class="mb-3">
+                <label for="domains" class="form-label"
+                  >Domain <small>(You are interested in)</small></label
+                >
+
+                <select
+                  class="form-select m-0 p-2"
+                  aria-label="Default select example"
+                  id="domains"
+                  name="domains"
+                >
+                  <option value="" disabled selected>
+                    Please select an option
+                  </option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="Machine Learning">Machine Learning</option>
+                  <option value="Game Development">Game Development</option>
+                  <option value="2D,3D, and AR/VR Content creation">
+                    2D,3D, and AR/VR Content creation
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="tools-Name" class="form-label"
+                  >Required tools
+                  <small>(Give comma separated value)</small></label
+                >
+                <input
+                  required
+                  type="text"
+                  class="form-control"
+                  id="tools-Name"
+                  aria-describedby="tools-Name"
+                  name="toolName"
+                />
+              </div>
+            </div>
+          </div>
+          <button type="button" id="submitBtn" class="btn btn-primary">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <%- include("./partials/footerVendor.ejs") %>
+    <!-- <script src="./js/RegistrationForm.js"></script> -->
+    <script>
+      $(document).ready(function () {
+        let amountToPay = 350;
+        $("#numberOfMember").change(function () {
+          var selectedValue = $(this).val();
+          validateField($(this));
+          $("#details-container").removeClass("d-none");
+          $(".number-of-selected-member").text(selectedValue);
+          let totalAmount = amountToPay * selectedValue;
+          $("#total-amount").text("₹" + totalAmount);
+
+          // Clear existing content
+          $(".team-member-container").empty();
+
+          // Loop to create team member details based on selected value
+          for (var i = 1; i < selectedValue; i++) {
+            var teamMemberDetails = createTeamMemberDetails(i + 1);
+
+            // Append the created content to the team container
+            $(".team-member-container").append(teamMemberDetails);
+          }
+        });
+
+        // Function to create team member details HTML
+        function createTeamMemberDetails(memberNumber) {
+          var html =
+            '<h4 class="text-primary mt-2">' +
+            memberNumber +
+            "<sup>st</sup> team member details</h4>" +
+            '<div class="row">' +
+            '<div class="col-lg-6">' +
+            '<div class="mb-3">' +
+            '<label for="team-member-name" class="form-label">Name</label>' +
+            '<input required type="text" class="form-control" id="team-member-name" aria-describedby="team-member-name" name="memberName" />' +
+            "</div>" +
+            "</div>" +
+            '<div class="col-lg-6">' +
+            '<div class="mb-3">' +
+            '<label for="team-member-id" class="form-label">Student/Employee ID number</label>' +
+            '<input required type="text" class="form-control" id="team-member-id" aria-describedby="team-member-id" name="memberId" />' +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            '<div class="row">' +
+            '<div class="col-lg-6">' +
+            '<div class="mb-3">' +
+            '<label for="team-member-contact" class="form-label">Contact number</label>' +
+            '<input required type="text" class="form-control" id="team-member-contact" aria-describedby="team-member-contact" name="memberContact" />' +
+            "</div>" +
+            "</div>" +
+            '<div class="col-lg-6">' +
+            '<div class="mb-3">' +
+            '<label for="team-member-email" class="form-label">Email</label>' +
+            '<input required type="email" class="form-control" id="team-member-email" aria-describedby="team-member-email" name="memberEmail" />' +
+            "</div>" +
+            "</div>" +
+            "</div>";
+
+          return html;
+        }
+
+        // Handle form submission using AJAX
+        $("#submitBtn").click(function () {
+          if (validateForm()) {
+            var formData = new FormData($("#registrationForm")[0]);
+
+            // Make the AJAX request
+            $.ajax({
+              type: "POST",
+              url: "/hacker-registration",
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function (response) {
+                $("#registrationForm")[0].reset();
+                toastr.success("Form submitted successfully");
+                window.location.href = `/successPage?teamId=${response.newUser.teamId}`;
+              },
+              error: function (error) {
+                toastr.error("Error submitting form:", error);
+              },
+            });
+          } else {
+            toastr.error("Please enter all the required details.");
+          }
+        });
+
+        // Bind validation logic to input and change events
+        $("#registrationForm input[required]").on("input", function () {
+          validateField($(this));
+        });
+
+        $("#domains").on("change", function () {
+          validateField($(this));
+        });
+
+        $("#tools-Name").on("input", function () {
+          validateField($(this));
+        });
+
+        // Bind validation logic to input event for dynamically created email fields
+        $("#registrationForm").on(
+          "input",
+          "input[type='email'][required]",
+          function () {
+            validateEmailField($(this));
+          }
+        );
+
+        // Function to validate a single form field
+        function validateField(field) {
+          if (!field.val()) {
+            // Display an error message (you can customize this based on your UI)
+            field.removeClass("is-valid").addClass("is-invalid");
+          } else {
+            field.removeClass("is-invalid").addClass("is-valid");
+          }
+        }
+
+        // Function to validate an email field
+        function validateEmailField(emailField) {
+          // Use a regular expression to validate the email address
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const emailValue = emailField.val();
+
+          if (emailRegex.test(emailValue)) {
+            emailField.removeClass("is-invalid").addClass("is-valid");
+          } else {
+            emailField.removeClass("is-valid").addClass("is-invalid");
+          }
+        }
+
+        // Function to validate the form
+        function validateForm() {
+          var isValid = true;
+
+          // Validate each form field
+          $(
+            "#registrationForm input[required], #domains, #tools-Name, #group-leader-email"
+          ).each(function () {
+            validateField($(this));
+            if (!$(this).hasClass("is-valid")) {
+              isValid = false;
+            }
+          });
+
+          // Additional custom validation logic if needed
+
+          return isValid;
+        }
+      });
+    </script>
+  </body>
+</html>

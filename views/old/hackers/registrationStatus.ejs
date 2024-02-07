@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/headerVendor.ejs')%>
+  </head>
+  <style>
+    .heading {
+      font-family: "ethnocentric";
+    }
+  </style>
+
+  <body>
+    <%- include('../partials/navbar.ejs')%>
+    <div
+      class="m-0 p-0 success-page row justify-content-center align-items-center"
+    >
+      <div class="col-lg-6">
+        <h3 class="mt-3 mb-0 heading" style="color: #7588fd">
+          Registration Status
+        </h3>
+        <p class="text-secondary mt-3 mb-4">
+          Please enter the team ID to check your registration status.
+        </p>
+        <form
+          method="POST"
+          action="/status"
+          class="status-form m-0 p-0"
+          id="statusForm"
+        >
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="teamId"
+              name="teamId"
+              placeholder="Please enter your team ID"
+              aria-describedby="TeamID"
+              required
+            />
+          </div>
+          <div class="py-2 d-flex justify-content-center">
+            <p class="text-secondary">Or</p>
+          </div>
+          <div class="mb-5">
+            <input
+              type="text"
+              class="form-control"
+              id="mobile"
+              name="mobile"
+              placeholder="Please enter your team's leader mobile number"
+              aria-describedby="mobile"
+              required
+            />
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary mb-3"
+            onclick="submitForm(event)"
+          >
+            Check Status
+          </button>
+        </form>
+        <div class="status-info mt-4 d-none" id="pendingMessage">
+          <h3 class="text-warning">Pending</h3>
+          <p class="text-warning">
+            Your verification is pending. Our team is diligently working to
+            review your information. Thank you for your patience. Once verified,
+            you will be all set to join the Coding Carnival. Stay tuned!
+          </p>
+        </div>
+        <div id="verifiedMessage" class="status-info mt-4 d-none">
+          <h3 class="text-success">Verified</h3>
+          <p class="text-success">
+            Congratulations! 🎉 You are now officially verified and all set to
+            embark on your Coding Carnival journey. Get ready to showcase your
+            skills and make a mark in the world of coding excellence. Let the
+            coding adventure begin!
+          </p>
+        </div>
+
+        <%- include('../partials/contactMessageVendor.ejs')%>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#statusForm").submit(submitForm);
+      });
+
+      function submitForm(event) {
+        event.preventDefault();
+
+        var formData = $("#statusForm").serialize();
+
+        $.ajax({
+          type: "POST",
+          url: "/status",
+          data: formData,
+          success: function (response) {
+            if (response.error) {
+              toastr.error(response.error);
+            } else {
+              // $("#statusForm").addClass("d-none");
+              $("#statusForm")[0].reset();
+              if (response.status === "verified") {
+                $("#verifiedMessage").removeClass("d-none");
+                $("#pendingMessage").addClass("d-none");
+              } else {
+                $("#pendingMessage").removeClass("d-none");
+                $("#verifiedMessage").addClass("d-none");
+              }
+            }
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            var errorResponse = xhr.responseJSON || {};
+
+            toastr.error(
+              errorResponse.error || "Failed to check status. Please try again."
+            );
+          },
+        });
+      }
+    </script>
+
+    <%- include('../partials/footerVendor.ejs')%>
+  </body>
+</html>

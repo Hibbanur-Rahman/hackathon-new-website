@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/headerVendor.ejs')%>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="bg-body-secondary">
+  <%- include('../partials/navbar.ejs')%>
+    <div class="row align-items-center justify-content-center pt-5">
+      <div class="col-md-8 mt-5 ps-4 pt-3">
+        <div class="my-3">
+          <a href="javascript:void(0);" onclick="goBack()" class="btn btn-link text-decoration-none">
+            <p class="m-0 p-0 fs-5">
+              <i class="fa-solid fa-arrow-left-long"></i> Back
+            </p>
+          </a>
+        </div>
+        <div class="card mt-4 mb-3">
+          <div class="card-body">
+            <h4 class="heading" style="color: #7588fd"><i class="bi bi-microsoft-teams me-2"></i>Team Details</h4>
+            <hr>
+            <div class="team-details">
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Name</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.teamName %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Team ID</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.teamId %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Number of Members</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.numberOfMember %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Team leader name</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.teamLeader.name %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Team leader phone</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.teamLeader.phone %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Registration date</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= registrationDate %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Team leader ID</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.teamLeader.instituteId %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Status</label>
+                <p class="col-6 col-md-8 m-0">
+                  <% if (hacker.status==="pending" ) { %>
+                    <span class="badge rounded-pill text-bg-danger">Pending</span>
+                    <% } else { %>
+                      <span class="badge rounded-pill text-bg-success">Verified</span>
+                      <% } %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="heading" style="color: #7588fd"><i class="bi bi-buildings-fill me-2"></i>Institute Details</h4>
+            <hr>
+            <div class="institute-details">
+              <div class="d-flex">
+                <label class="col-4 fw-semibold pe-1">Name</label>
+                <p class="col-8 m-0">
+                  <%= hacker.instituteName %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-4 fw-semibold pe-1">Address</label>
+                <p class="col-8 m-0">
+                  <%= hacker.instituteAddress %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="heading" style="color: #7588fd"><i class="bi bi-people-fill me-2"></i>Team Members Details</h4>
+            <hr>
+            <% if (hacker && hacker.teamMembers) { %>
+              <% hacker.teamMembers.forEach(function(item) { %>
+                <div class="members-details">
+                  <div class="d-flex">
+                    <label class="col-6 col-md-4 fw-semibold pe-1">Name</label>
+                    <p class="col-6 col-md-8 m-0">
+                      <%= item.name %>
+                    </p>
+                  </div>
+
+                  <div class="d-flex">
+                    <label class="col-6 col-md-4 fw-semibold pe-1">Phone</label>
+                    <p class="col-6 col-md-8 m-0">
+                      <%= item.phone %>
+                    </p>
+                  </div>
+
+                  <div class="d-flex">
+                    <label class="col-6 col-md-4 fw-semibold pe-1">Student/Employee ID</label>
+                    <p class="col-6 col-md-8 m-0">
+                      <%= item.instituteId %>
+                    </p>
+                  </div>
+                </div>
+                <% }); %>
+                  <% } else { %>
+                    <p class="col-6 m-0">No team members available.</p>
+                    <% } %>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="heading" style="color: #7588fd"><i class="bi bi-gear-wide-connected me-2"></i>Domain</h4>
+            <hr>
+            <div class="domain">
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Name</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.domains %>
+                </p>
+              </div>
+
+              <div class="d-flex">
+                <label class="col-6 col-md-4 fw-semibold pe-1">Tools required</label>
+                <p class="col-6 col-md-8 m-0">
+                  <%= hacker.toolName %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h4 class="heading" style="color: #7588fd"><i class="bi bi-receipt me-2"></i>Transaction</h4>
+            <hr>
+            <div class="transaction">
+              <div class="d-flex">
+                <label class="col-4 fw-semibold pe-1">UTR</label>
+                <p class="col-8 m-0">
+                  <%= hacker.upiNumber %>
+                </p>
+              </div>
+
+              <div class="d-block">
+                <p class="fw-semibold pe-1">Receipt</p>
+                <img src="../<%= hacker.transactionImage %>" alt="Transaction Receipt" style="max-width:320px" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include("../partials/footerVendor.ejs") %>
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+</body>
+
+</html>

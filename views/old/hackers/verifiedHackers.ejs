@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/headerVendor.ejs')%>
+  </head>
+  <body>
+    <%- include('../partials/navbar.ejs')%>
+    <div class="row align-items-center justify-content-center pt-5">
+      <div class="col-8 mt-5 pt-3">
+        <div class="my-3">
+          <a href="/dashboard" class="btn btn-link text-decoration-none"
+            ><p class="m-0 p-0 fs-5">
+              <i class="fa-solid fa-arrow-left-long"></i> Back
+            </p></a
+          >
+        </div>
+        <table id="example" class="display" style="width: 100%">
+          <thead>
+            <tr>
+              <th>Sr. No.</th>
+              <th>Team name</th>
+              <th>Institute</th>
+              <th>No. of members</th>
+              <th>UTR</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let serialNumber = 1; %> <%
+            verifiedHackers.forEach(function(item) { %>
+            <tr>
+              <td><%= serialNumber %></td>
+              <td><%= item.teamName %></td>
+              <td><%= item.instituteName %></td>
+              <td><%= item.numberOfMember %></td>
+              <td><%= item.upiNumber %></td>
+              <td>
+                <span class="badge rounded-pill text-bg-success">Verified</span>
+              </td>
+            </tr>
+            <% serialNumber++; %> <% }); %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Verification Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Hacker verification
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="/verifyHacker" id="verify-form">
+              <div class="mb-3">
+                <label for="utr-no" class="form-label">UTR No.</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="utr-no"
+                  aria-describedby="utrHelp"
+                  placeholder="Please enter 12 digit UTR"
+                />
+                <!-- <div id="utrHelp" class="form-text">
+                  Enter the same UTR found in transaction.
+                </div> -->
+              </div>
+
+              <button type="submit" class="btn btn-primary">Verify</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include("../partials/footerVendor.ejs") %>
+
+    <script>
+      $(document).ready(function () {
+        function validateUTR(input) {
+          let utrValue = input.value;
+          if (/^\d{12}$/.test(utrValue)) {
+            input.setCustomValidity("");
+          } else {
+            input.setCustomValidity("Please enter a valid 12-digit UTR");
+          }
+        }
+
+        $("#example").DataTable({
+          dom: "Bfrtip",
+          buttons: [
+            {
+              extend: "csv",
+              text: "Export data",
+              className: "btn-own",
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>

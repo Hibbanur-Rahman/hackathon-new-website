@@ -1,0 +1,32 @@
+{
+  "name": "coding-carnival-hackathon",
+  "version": "1.0.0",
+  "description": "this is coding carnival hackathon",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hackathon",
+    "coding-carnival",
+    "hibban"
+  ],
+  "author": "hibbanur rahman",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "connect-mongodb-session": "^5.0.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "mongoose": "^8.1.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.3",
+    "simple-datatables": "^9.0.0"
+  }
+}

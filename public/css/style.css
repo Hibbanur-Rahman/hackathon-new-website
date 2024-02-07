@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@font-face {
+  font-family: "ethnocentric";
+  src: url("./ethnocentric.rg-regular.otf");
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+.heading {
+  font-family: "ethnocentric";
+}
+
+.ctm-navbar {
+  height: 70px;
+  transition: height 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #7588FD !important;
+  z-index: 3;
+}
+
+.nav-toggle-btn {
+  background-color: #7588FD;
+}
+
+.nav-responsive {
+  background-color: #1e1e1e !important;
+}
+
+.closeNav i {
+  color: #FFFFCC !important;
+}
+
+.navRow {
+  background-color: #7588FD !important;
+  height: 50px;
+}
+
+.home-section {
+  padding-top: 100px !important;
+  background-color: #7588FD;
+}
+.home-section h1 {
+  font-size: 51px;
+  font-weight: 300;
+  font-family: "ethnocentric";
+}
+.home-section .textRegistartionDate {
+  width: 58%;
+}
+
+.modal {
+  --bs-modal-width: 400px !important;
+}
+.modal input:focus {
+  outline: none !important;
+}
+
+.typed-cursor {
+  margin: 0px !important;
+  width: 2px !important;
+  height: 30px !important;
+  background-color: #FFFFCC;
+  display: inline-block;
+  margin-left: 3px !important;
+}
+
+.typing {
+  width: auto !important;
+}
+
+.judges {
+  color: #7588FD !important;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  height: 56px;
+  width: 200px;
+}
+.judges .overlay {
+  position: absolute;
+  left: 100%;
+  transition: all 0.5s ease-in-out;
+  background-color: #7588FD !important;
+  color: white !important;
+  height: 56px;
+  width: 200px;
+}
+
+.judges:hover .overlay {
+  left: 0%;
+  transition: all 0.5s ease-in-out;
+}
+
+.judges:hover span {
+  opacity: 0;
+}
+
+.register {
+  color: #FFFFCC !important;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  height: 56px;
+  width: 200px;
+  background: transparent;
+}
+.register .overlay {
+  position: absolute;
+  left: 100%;
+  transition: all 0.5s ease-in-out;
+  background-color: white !important;
+  color: #7588FD !important;
+  height: 56px;
+  width: 200px;
+}
+
+.register:hover .overlay {
+  left: 0%;
+  transition: all 0.5s ease-in-out;
+}
+
+.register:hover span {
+  opacity: 0;
+}
+
+.faq h1 {
+  font-size: 60px;
+}
+
+.carnivalDescription {
+  font-size: 18px !important;
+}
+
+.codeImgLogo {
+  height: 250px !important;
+  width: 250px !important;
+}
+
+.faq-list-item {
+  background-color: #AEB8FE;
+}
+
+.faq-list-desc {
+  background-color: #AEB8FE !important;
+  margin-top: -10px;
+}
+
+.sponsor img {
+  width: 250px !important;
+  height: 100px !important;
+}
+
+.sponsor-btn {
+  background-color: #7588FD !important;
+}
+
+.footer {
+  background-color: #7588FD;
+}
+
+form input:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+form select:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+form .payment img {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.success-page {
+  height: auto;
+}
+.success-page i {
+  color: #7588FD !important;
+  font-size: 100px !important;
+}
+.success-page button {
+  background-color: #7588FD !important;
+}
+
+.custom-card {
+  transition: 0.3s ease-out;
+}
+
+.custom-card:hover {
+  transform: scale(1.01);
+  /* Example scale transformation */
+  border-top: 3px solid #7588fd !important;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (min-width: 100px) and (max-width: 550px) {
+  .heading-text {
+    font-size: 40px !important;
+  }
+  .calendar {
+    padding: 6px 6px 0px 6px !important;
+    width: auto !important;
+    border-radius: 12px !important;
+  }
+  .textRegistartionDate {
+    width: 100% !important;
+  }
+  .faq-heading {
+    font-size: 40px !important;
+  }
+  .codeImgLogo {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .typed-cursor {
+    margin: 0px !important;
+    width: 2px !important;
+    height: 20px !important;
+    background-color: #FFFFCC;
+    display: inline-block;
+    margin-left: 3px !important;
+  }
+  #map-iframe {
+    width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

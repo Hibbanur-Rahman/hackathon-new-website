@@ -1,0 +1,162 @@
+<div class="row align-items-center justify-content-center">
+  <div class="col-12 mt-5">
+    <div class="home-slide-text">
+      <h5>Pending teams</h5>
+    </div>
+    <table id="pending-hacker-table" class="display" style="width: 100%">
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Team name</th>
+          <th>Team ID</th>
+          <th>Domain</th>
+          <th>Institute</th>
+          <th>No. of members</th>
+          <th>UTR</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let serialNumber = 1; %> <% pendingTeams.forEach(function(item) {%>
+        <tr>
+          <td><%= serialNumber %></td>
+          <td><%= item.teamName %></td>
+          <td><%= item.teamId %></td>
+          <td><%= item.domains %></td>
+          <td><%= item.instituteName %></td>
+          <td><%= item.numberOfMember %></td>
+          <td><%= item.upiNumber %></td>
+          <td>
+            <% if (item.status === "pending") { %>
+            <span
+              class="badge rounded-pill text-bg-danger"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              style="cursor: pointer"
+              data-user-id="<%= item._id %>"
+              >Pending</span
+            >
+            <% } else { %>
+            <span class="badge rounded-pill text-bg-success">Verified</span>
+            <% } %>
+          </td>
+          <td>
+            <a href="/profile/<%= item._id %>" class="btn btn-primary btn-sm"
+              >View</a
+            >
+          </td>
+        </tr>
+        <% serialNumber++; %> <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- Verification Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  data-bs-backdrop="false"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Hacker verification</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/verify-hacker" id="verify-form">
+          <div class="mb-3">
+            <label for="utr-no" class="form-label">UTR No.</label>
+            <input
+              type="text"
+              class="form-control"
+              id="utr-no"
+              aria-describedby="utrHelp"
+              placeholder="Please enter 12 digit UTR"
+              minlength="12"
+              maxlength="12"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Verify</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $("#pending-hacker-table").DataTable({
+      dom: "Bfrtip",
+      buttons: [
+        {
+          extend: "csv",
+          text: "Export data",
+          className: "custom-primary-btn",
+        },
+      ],
+    });
+
+    function validateUTR(input) {
+      let utrValue = input.value;
+      if (/^\d{12}$/.test(utrValue)) {
+        input.setCustomValidity("");
+      } else {
+        input.setCustomValidity("Please enter a valid 12-digit UTR");
+      }
+    }
+
+    $('.badge[data-bs-toggle="modal"]').on("click", function () {
+      const userId = $(this).data("user-id");
+      console.log("User ID:", userId);
+
+      $("#utr-no").val("");
+      $("#exampleModal").modal("show");
+
+      $("#verify-form").submit(function (e) {
+        e.preventDefault();
+
+        const utrValue = $("#utr-no").val();
+
+        // Make an AJAX request to the server for UTR verification
+        $.ajax({
+          url: "/verify-hacker",
+          type: "POST",
+          data: JSON.stringify({ userId: userId, utr: utrValue }),
+          contentType: "application/json",
+          success: function (data) {
+            if (data.success) {
+              toastr.success(data.message);
+              location.reload();
+            } else {
+              toastr.error(data.message);
+            }
+
+            // Close the modal
+            $("#exampleModal").modal("hide");
+          },
+          error: function (error) {
+            toastr.error("Error", error.responseJSON.message);
+          },
+        });
+      });
+    });
+  });
+</script>

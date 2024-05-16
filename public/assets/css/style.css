@@ -1527,9 +1527,9 @@ html.menu-opened body {
 	z-index: 9;
 	font-size: 14px;
 }
-.footer-top .footer-about-content {
+/* .footer-top .footer-about-content {
 	max-width: 315px;
-}
+} */
 .footer-bottom {
 	position: relative;
 	z-index: 9;
@@ -1719,6 +1719,7 @@ html.menu-opened body {
 }
 .girl-slide-img img {
 	width: 100%;
+    scale: 1.2;
 }
 .location-search .form-control {
 	padding-right: 160px;
@@ -1959,6 +1960,9 @@ html.menu-opened body {
 	padding: 25px;
 	position: relative;
 	background: #fff;
+}
+.online-course .course-img{
+    width: 30%;
 }
 .course-inner-content {
     margin-left: 20px;
@@ -2205,13 +2209,14 @@ html.menu-opened body {
     -webkit-transition: all 0.5s ease;
 }
 .product-img {
+    text-align: center;
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
 	border-radius: 10px 10px 10px 10px;
 }
 .product-img img {
-    width: 100%;
+    width: 60%;
     border-radius: 4px 4px 0 0;
 	transform: translateZ(0);
 	transition: all 2000ms cubic-bezier(.19,1,.22,1) 0ms;
@@ -2645,6 +2650,7 @@ html.menu-opened body {
 	font-size: 18px;
 	margin-bottom: 0;
 	margin-bottom: 40px;
+    text-align: justify;
 }
 .yellow-mentor {
 	background: #FFE88F;
@@ -2824,10 +2830,9 @@ html.menu-opened body {
 	font-size: 18px;
 	color: #685F78;
 }
+
 .mentor-img img {
-	position: absolute;
-    bottom: 0;
-    right: 0;
+    height: 100px !important;
 }
 
 /*-----------------
@@ -5008,6 +5013,7 @@ html.menu-opened body {
 .home-three-slide .girl-slide-img img {
     width: 500px;
     margin-top: 104px;
+
 }
 .home-three .header-nav {
     -webkit-box-align: center;
@@ -11426,7 +11432,7 @@ textarea:focus {
 	max-width: 100%;
 	width: 100%;
 	font-weight: 600;
-	padding: 100px;
+	padding: 50px;
 }
 .login-wrapper .loginbox .img-logo {
 	margin-bottom: 54px;
@@ -21675,9 +21681,9 @@ input[type=password]::-ms-clear
 	.bg-pattern-style-register {
 		height: auto;
 	}
-	.footer .footer-widget .footer-logo img {
+	/* .footer .footer-widget .footer-logo img {
 		max-height:40px;
-	}
+	} */
 	#mobile_btn {
 		top: 18px;
 		margin-right: 0;
@@ -25524,3 +25530,7 @@ input[type=password]::-ms-clear
     }
 }
 
+/* custom css */
+.modal-dialog{
+    max-width: 756px;
+}

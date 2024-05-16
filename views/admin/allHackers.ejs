@@ -1,0 +1,67 @@
+<div class="row align-items-center justify-content-center">
+  <div class="col-12 mt-5">
+    <div class="home-slide-text">
+      <h5>All hackers</h5>
+    </div>
+    <table id="all-hacker-table" class="display" style="width: 100%">
+      <thead>
+        <tr>
+          <th>Sr. No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Type</th>
+          <th>ID</th>
+          <th>Team name & ID</th>
+          <th>Domain</th>
+          <th>Institute</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% let serialNumber = 1; %> <% filteredHackers.forEach(function(item)
+        {%>
+        <tr>
+          <td><%= serialNumber %></td>
+          <td><%= item.name %></td>
+          <td><%= item.email %></td>
+          <td><%= item.phone %></td>
+          <td>
+            <% if (item.type === "leader") { %>
+            <span class="badge rounded-pill text-bg-warning">Leader</span>
+            <% } else { %>
+            <span class="badge rounded-pill text-bg-info">Member</span>
+            <% } %>
+          </td>
+          <td><%= item.instituteId %></td>
+          <td><%= item.teamName %> (<%= item.teamId %>)</td>
+          <td><%= item.domains %></td>
+          <td><%= item.instituteName %></td>
+          <td>
+            <% if (item.status === "pending") { %>
+            <span class="badge rounded-pill text-bg-danger">Pending</span>
+            <% } else { %>
+            <span class="badge rounded-pill text-bg-success">Verified</span>
+            <% } %>
+          </td>
+        </tr>
+        <% serialNumber++; %> <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#all-hacker-table").DataTable({
+      dom: "Bfrtip",
+      buttons: [
+        {
+          extend: "csv",
+          text: "Export data",
+          className: "custom-primary-btn",
+        },
+      ],
+    });
+  });
+</script>

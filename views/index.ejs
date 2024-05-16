@@ -1,36 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <%- include('./partials/headerVendor.ejs')%>
+  </head>
 
-<head>
-  <%- include('./partials/headerVendor.ejs')%>
-</head>
+  <body>
+    <span class="loader d-none" id="loader"></span>
+    <!-- <%- include('./partials/onloadPopup.ejs')%> -->
 
-<body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <%- include('./partials/navbar.ejs')%> <%-
+      include('./partials/pageheader.ejs')%> <%-
+      include('./partials/domainWiseHackerCounter.ejs')%> <%-
+      include('./partials/prizeSection.ejs')%> <%-
+      include('./partials/upcomingHackathon.ejs')%> <%-
+      include('./partials/aboutHackathon.ejs')%> <%-
+      include('./partials/sponsor.ejs')%> <%- include('./partials/footer.ejs')%>
+    </div>
+    <!-- /Main Wrapper -->
 
-  <!-- Main Wrapper -->
-  <div class="main-wrapper">
+    <%- include('./partials/footerVendor.ejs')%>
+    <script>
+      $(document).ready(function () {
+        setTimeout(function () {
+          // Show the modal
+          $("#onloadPopup").modal("show");
+        }, 1000); // Adjust the delay time as needed
 
-    <%- include('./partials/navbar.ejs')%>
+        // Hide the modal when the close button is clicked
+        $("#onloadPopup .btn-close").click(function () {
+          $("#onloadPopup").modal("hide");
+        });
 
-    <%- include('./partials/pageHeader.ejs')%>
+        // Focus on an input element when the modal is shown
+        $("#onloadPopup").on("shown.bs.modal", function () {
+          $(this).find("input:first").focus();
+        });
+        // function to download button
+        $("#downloadButton").click(function () {
+          $("#download-icon")
+            .removeClass("fas fa-download me-2")
+            .addClass("fas fa-spinner fa-spin me-2");
 
-    <%- include('./partials/domainWiseHackerCounter.ejs')%>
+          setTimeout(function () {
+            window.location.href = "/download-brochure";
 
-    <%- include('./partials/prizeSection.ejs')%>
-    
-    <%- include('./partials/upcomingHackathon.ejs')%>
-    
-    <%- include('./partials/aboutHackathon.ejs')%>
-    
-    <%- include('./partials/sponsor.ejs')%>
+            $("#download-icon")
+              .removeClass("fas fa-spinner fa-spin me-2")
+              .addClass("fas fa-download me-2");
+          }, 2000);
+        });
 
-    <%- include('./partials/footer.ejs')%>
+        // counter
+        updateTime();
+      });
 
-  </div>
-  <!-- /Main Wrapper -->
+      function updateTime() {
+        const targetDate = moment("2024-03-05 23:59:59", "YYYY-MM-DD HH:mm:ss");
+        const currentTime = moment();
 
-  <%- include('./partials/footerVendor.ejs')%>
+        if (currentTime.isAfter(targetDate)) {
+          $(".clock-col").remove();
+          $(".clock-container").text("Registration is closed now.");
+          return;
+        }
 
-</body>
+        const duration = moment.duration(targetDate.diff(moment()));
+        $("html").css("--timer-day", "'" + padZero(duration.days()) + "'");
+        $("html").css("--timer-hours", "'" + padZero(duration.hours()) + "'");
+        $("html").css(
+          "--timer-minutes",
+          "'" + padZero(duration.minutes()) + "'"
+        );
+        $("html").css(
+          "--timer-seconds",
+          "'" + padZero(duration.seconds()) + "'"
+        );
 
+        requestAnimationFrame(updateTime);
+      }
+
+      function padZero(value) {
+        return value < 10 ? "0" + value : value;
+      }
+    </script>
+  </body>
 </html>

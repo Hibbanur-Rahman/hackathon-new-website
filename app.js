@@ -8,6 +8,8 @@ const mainRoutes = require("./routes/mainRoutes");
 const dbConnect = require("./config/db");
 const sessionMiddleware = require("./middleware/sessionMiddleware");
 const { checkLoggedIn } = require("./middleware/authMiddleware");
+const { notFoundHandler, errorHandler } = require("./middleware/errorHandler");
+const setCurrentPath = require("./middleware/currentPathMiddleware");
 
 // Load environment variables from .env file
 dotenv.config();
@@ -26,7 +28,6 @@ const publicPathUploads = path.join(__dirname, "uploads");
 app.use(express.static(publicPath));
 app.use(express.static(publicPathUploads));
 
-
 // Set EJS as the view engine for rendering dynamic content
 app.set("view engine", "ejs");
 
@@ -39,8 +40,15 @@ app.use(sessionMiddleware);
 
 app.use(checkLoggedIn);
 
+// Middleware to set the current path
+app.use(setCurrentPath);
+
 // Use mainRoutes for handling routes starting from the root ("/")
 app.use("/", mainRoutes);
+
+// error handling
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 // Set the port for the server, using the environment variable PORT or defaulting to 8000
 const port = process.env.PORT || 8000;

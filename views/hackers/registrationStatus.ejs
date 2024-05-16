@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/headerVendor.ejs')%>
+  </head>
+
+  <body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper log-wrap">
+      <div class="row">
+        <!-- Login Banner -->
+        <div class="col-md-6 login-bg">
+          <%- include("../partials/sliderLoginRegister.ejs") %>
+        </div>
+        <!-- /Login Banner -->
+
+        <div class="col-md-6 login-wrap-bg">
+          <!-- Login -->
+          <div class="login-wrapper">
+            <div class="loginbox">
+              <div class="w-100">
+                <div class="img-logo">
+                  <img src="images/logo.png" class="img-fluid" alt="Logo" />
+                  <div class="back-home">
+                    <a href="/">Back to Home</a>
+                  </div>
+                </div>
+                <h1>Check registration status</h1>
+                <label
+                  >Please enter the team ID to check your registration
+                  status.</label
+                >
+                <form method="POST" action="/status" id="statusForm">
+                  <div class="input-block">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="teamId"
+                      name="teamId"
+                      placeholder="Please enter your team ID"
+                      aria-describedby="TeamID"
+                    />
+                  </div>
+                  <div class="text-center">
+                    <label for="">Or</label>
+                  </div>
+                  <div class="input-block">
+                    <div class="pass-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="mobile"
+                        name="mobile"
+                        placeholder="Please enter your team's leader mobile number"
+                        aria-describedby="mobile"
+                      />
+                    </div>
+                  </div>
+                  <div class="d-grid">
+                    <button class="btn btn-primary btn-start" type="submit">
+                      Check status
+                    </button>
+                  </div>
+                </form>
+                <div class="status-info mt-4 d-none" id="pendingMessage">
+                  <h3 class="text-warning">Pending</h3>
+                  <p class="text-warning">
+                    Your verification is pending. Our team is diligently working
+                    to review your information. Thank you for your patience.
+                    Once verified, you will be all set to join the Coding
+                    Carnival. Stay tuned!
+                  </p>
+                </div>
+                <div id="verifiedMessage" class="status-info mt-4 d-none">
+                  <h3 class="text-success">Verified</h3>
+                  <p class="text-success">
+                    Congratulations! 🎉 You are now officially verified and all
+                    set to embark on your Coding Carnival journey. Get ready to
+                    showcase your skills and make a milestone in the world of
+                    coding excellence. Let the coding adventure begin!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="google-bg">
+              <%- include("../partials/contactInfo.ejs") %>
+            </div>
+          </div>
+          <!-- /Login -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+
+    <%- include('../partials/footerVendor.ejs')%>
+    <script>
+      $(document).ready(function () {
+        $("#statusForm").submit(submitForm);
+      });
+
+      function submitForm(event) {
+        event.preventDefault();
+
+        var formData = $("#statusForm").serialize();
+
+        $.ajax({
+          type: "POST",
+          url: "/status",
+          data: formData,
+          success: function (response) {
+            if (response.error) {
+              toastr.error(response.error);
+            } else {
+              // $("#statusForm").addClass("d-none");
+              $("#statusForm")[0].reset();
+              if (response.status === "verified") {
+                $("#verifiedMessage").removeClass("d-none");
+                $("#pendingMessage").addClass("d-none");
+              } else {
+                $("#pendingMessage").removeClass("d-none");
+                $("#verifiedMessage").addClass("d-none");
+              }
+            }
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            var errorResponse = xhr.responseJSON || {};
+
+            toastr.error(
+              errorResponse.error || "Failed to check status. Please try again."
+            );
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

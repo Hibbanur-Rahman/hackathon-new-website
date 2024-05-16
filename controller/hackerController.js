@@ -4,6 +4,8 @@ const multer = require("multer");
 const httpStatusCode = require("../constant/httpStatusCodes");
 const { generateTeamID } = require("../utils/helperFunctions.js");
 
+const addToEmailQueue = require("../utils/emailWorker.js");
+
 const registerHacker = async (req, res) => {
   try {
     // Access the uploaded file information
@@ -55,7 +57,8 @@ const registerHacker = async (req, res) => {
     }
 
     const teamMembers = [];
-
+    // BCC recipients
+    const bccList = [];
     if (req.body.memberName) {
       for (let i = 0; i < numberOfMember - 1; i++) {
         if (Array.isArray(req.body.memberName)) {
@@ -66,6 +69,7 @@ const registerHacker = async (req, res) => {
             instituteId: req.body.memberId[i],
           };
           teamMembers.push(member);
+          bccList.push(member.email);
         } else {
           const member = {
             name: req.body.memberName,
@@ -74,6 +78,7 @@ const registerHacker = async (req, res) => {
             instituteId: req.body.memberId,
           };
           teamMembers.push(member);
+          bccList.push(member.email);
         }
       }
     } else {
@@ -84,6 +89,7 @@ const registerHacker = async (req, res) => {
         instituteId: groupLeaderId,
       };
       teamMembers.push(member);
+      bccList.push(member.email);
     }
 
     // Check if a user with the same groupLeaderId already exists
@@ -124,12 +130,29 @@ const registerHacker = async (req, res) => {
       teamMembers,
     });
 
+    console.log("bccList:- ", bccList);
     if (newUser) {
       res.status(httpStatusCode.OK).json({
         success: true,
         message: "From submitted successfully",
         newUser,
       });
+      // Example data to pass to the template
+      const data = {
+        teamName: teamName,
+        teamId: teamId,
+        // Add any other data you want to pass to the template
+      };
+
+      // Add email task to the queue
+      addToEmailQueue(
+        "info@codingcarnival.in",
+        newUser.teamLeader.email, // Use newUser.teamLeader.email instead of teamLeader.email
+        "Registration Successful",
+        "successMail", // This should match the name of your EJS template file without the .ejs extension
+        data,
+        bccList
+      );
     }
   } catch (error) {
     return res.status(httpStatusCode.INTERNAL_SERVER_ERROR).json({

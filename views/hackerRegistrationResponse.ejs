@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/headerVendor.ejs')%>
+  </head>
+
+  <body>
+    <!-- Main Wrapper -->
+    <div class="main-wrapper log-wrap">
+      <div class="row">
+        <!-- Login Banner -->
+        <div class="col-md-6 login-bg">
+          <%- include("./partials/sliderLoginRegister.ejs") %>
+        </div>
+        <!-- /Login Banner -->
+
+        <div class="col-md-6 login-wrap-bg">
+          <!-- Login -->
+          <div class="login-wrapper">
+            <div class="loginbox">
+              <div class="w-100">
+                <div class="img-logo">
+                  <img src="images/logo.png" class="img-fluid" alt="Logo" />
+                  <div class="back-home">
+                    <a href="/">Back to Home</a>
+                  </div>
+                </div>
+                <h1>Application submitted successfully!</h1>
+                <p class="m-0 p-0 text-secondary mt-3 mb-5">
+                  Thank you for submitting your application. Our team will now
+                  verify the information you provided. You can check the status
+                  of your application using either the Team ID or your mobile
+                  number.
+                </p>
+                <h4 class="mb-4 p-0 text-secondary">Team ID: <%= teamId %></h4>
+
+                <a href="/status" class="btn btn-primary text-light w-auto mt-2"
+                  >Check status</a
+                >
+              </div>
+            </div>
+            <div class="google-bg">
+              <%- include("./partials/contactInfo.ejs") %>
+            </div>
+          </div>
+          <!-- /Login -->
+        </div>
+      </div>
+    </div>
+    <!-- /Main Wrapper -->
+
+    <%- include('./partials/footerVendor.ejs')%>
+  </body>
+</html>

@@ -1,10 +1,10 @@
 <!-- Header -->
-<header class="header">
+<header class="header header-page">
   <div class="header-fixed">
     <nav class="navbar navbar-expand-lg header-nav scroll-sticky">
       <div class="container">
         <div class="navbar-header">
-          <a id="mobile_btn" href="javascript:void(0);">
+          <a id="mobile_btn" href="javascript:void(0);" rel="nofollow">
             <span class="bar-icon">
               <span></span>
               <span></span>
@@ -12,37 +12,72 @@
             </span>
           </a>
           <a href="/" class="navbar-brand logo">
-            <img src="images/logo.png" class="img-fluid" alt="Logo">
+            <img src="images/logo.png" class="img-fluid" alt="Logo" />
           </a>
         </div>
         <div class="main-menu-wrapper">
           <div class="menu-header">
             <a href="/" class="menu-logo">
-              <img src="images/logo.png" class="img-fluid" alt="Logo">
+              <img src="images/logo.png" class="img-fluid" alt="Logo" />
             </a>
-            <a id="menu_close" class="menu-close" href="javascript:void(0);">
+            <a id="menu_close" class="menu-close" href="javascript:void(0);" rel="nofollow">
               <i class="fas fa-times"></i>
             </a>
           </div>
           <ul class="main-nav">
-            <li class="has-submenu active">
-              <a class="" href="/">Home</a>
+            <li class="nav-item <%= currentPath === '/' ? 'active' : '' %>">
+              <a href="/">Home</a>
             </li>
-            <li class="has-submenu">
-              <a class="" href="/hacker-registration">Apply</a>
+            <li class="nav-item">
+              <a href="/hacker-registration">Apply now</a>
             </li>
-            <li class="has-submenu">
-              <a class="" href="/status">Status</a>
+            <li class="nav-item">
+              <a href="/status">Status</a>
             </li>
+            <li class="nav-item <%= currentPath === '/terms-conditions' ? 'active' : '' %>">
+              <a href="/terms-conditions">Terms & conditions</a>
+            </li>
+            <li class="nav-item <%= currentPath === '/privacy-policy' ? 'active' : '' %>">
+              <a href="/privacy-policy">Privacy policy</a>
+            </li>
+            <% if (loggedIn) { %>
+              <li class="nav-item d-lg-none">
+                <a class="dropdown-item" href="/logout"><i class="feather-log-out me-1"></i> Logout</a>
+              </li>
+              <% } else { %>
+                <li class="nav-item d-lg-none">
+                  <a class="nav-link header-sign" href="/login">Login</a>
+                </li>
+                <% } %>
+                  </li>
           </ul>
         </div>
+
         <ul class="nav header-navbar-rht">
           <% if (loggedIn) { %>
-            <li class="nav-item">
-              <a class="nav-link" href="/dashboard">Dashboard</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link header-sign" href="/logout">Logout</a>
+            <li class="nav-item user-nav">
+              <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                <span class="user-img">
+                  <img src="assets/img/user-avatar.jpg" alt="coding carnival" />
+                  <span class="status online"></span>
+                </span>
+              </a>
+              <div class="users dropdown-menu dropdown-menu-right" data-popper-placement="bottom-end">
+                <div class="user-header">
+                  <div class="avatar avatar-sm">
+                    <img src="assets/img/user-avatar.jpg" alt="User Image" class="avatar-img rounded-circle" />
+                  </div>
+                  <div class="user-text">
+                    <h6 class="text-capitalize">
+                      <%= loggedIn.name %>
+                    </h6>
+                    <p class="text-muted mb-0">Admin</p>
+                  </div>
+                </div>
+                <a class="dropdown-item" href="/dashboard"><i class="feather-home me-1"></i> Dashboard</a>
+
+                <a class="dropdown-item" href="/logout"><i class="feather-log-out me-1"></i> Logout</a>
+              </div>
             </li>
             <% } else { %>
               <li class="nav-item">

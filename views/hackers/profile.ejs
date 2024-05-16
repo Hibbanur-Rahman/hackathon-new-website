@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <title>Coding Carnival</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon/favicon.svg" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="../assets/plugins/fontawesome/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="../assets/plugins/fontawesome/css/all.min.css" />
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="../assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css" />
+
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="../assets/plugins/slick/slick.css" />
+  <link rel="stylesheet" href="../assets/plugins/slick/slick-theme.css" />
+
+  <!-- Select2 CSS -->
+  <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css" />
+
+  <!-- Aos CSS -->
+  <link rel="stylesheet" href="../assets/plugins/aos/aos.css" />
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" />
+
+  <!-- DataTables Buttons CSS -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css" />
+
+  <!-- Toastr CSS -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/custom-style.css" />
+
+</head>
+
+<body class="bg-body-secondary ">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-fixed">
+      <nav class="navbar navbar-expand-lg header-nav scroll-sticky">
+        <div class="container">
+          <div class="navbar-header">
+            <a id="mobile_btn" href="javascript:void(0);" rel="nofollow">
+              <span class="bar-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </a>
+            <a href="/" class="navbar-brand logo">
+              <img src="../images/logo.png" class="img-fluid" alt="Logo" />
+            </a>
+          </div>
+          <div class="main-menu-wrapper">
+            <div class="menu-header">
+              <a href="/" class="menu-logo">
+                <img src="../images/logo.png" class="img-fluid" alt="Logo" />
+              </a>
+              <a id="menu_close" class="menu-close" href="javascript:void(0);" rel="nofollow">
+                <i class="fas fa-times"></i>
+              </a>
+            </div>
+            <ul class="main-nav">
+              <li class="has-submenu active">
+                <a class="" href="/">Home</a>
+              </li>
+              <li class="has-submenu">
+                <a class="" href="/hacker-registration">Apply</a>
+              </li>
+              <li class="has-submenu">
+                <a class="" href="/status">Status</a>
+              </li>
+            </ul>
+          </div>
+          <ul class="nav header-navbar-rht">
+            <% if (loggedIn) { %>
+              <li class="nav-item user-nav">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+                  <span class="user-img">
+                    <img src="../assets/img/user-avatar.jpg" alt="coding carnival" />
+                    <span class="status online"></span>
+                  </span>
+                </a>
+                <div class="users dropdown-menu dropdown-menu-right" data-popper-placement="bottom-end">
+                  <div class="user-header">
+                    <div class="avatar avatar-sm">
+                      <img src="../assets/img/user-avatar.jpg" alt="User Image" class="avatar-img rounded-circle" />
+                    </div>
+                    <div class="user-text">
+                      <h6 class="text-capitalize">
+                        <%= loggedIn.name %>
+                      </h6>
+                      <p class="text-muted mb-0">Admin</p>
+                    </div>
+                  </div>
+                  <a class="dropdown-item" href="/dashboard"><i class="feather-home me-1"></i> Dashboard</a>
+
+                  <a class="dropdown-item" href="/logout"><i class="feather-log-out me-1"></i> Logout</a>
+                </div>
+              </li>
+              <% } else { %>
+                <li class="nav-item">
+                  <a class="nav-link header-sign" href="/login">Login</a>
+                </li>
+                <% } %>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- /Header -->
+
+  <div class="row align-items-center justify-content-center pt-5">
+    <div class="col-md-8 mt-5 ps-md-4 pt-3">
+      <div class="my-3">
+        <a href="javascript:void(0);" rel="nofollow" onclick="goBack()" class="btn btn-link text-decoration-none">
+          <p class="m-0 p-0 fs-5" style="color:#F66962;">
+            <i class="fa-solid fa-arrow-left-long"></i> Back
+          </p>
+        </a>
+      </div>
+      <div class="card mt-4 mb-3">
+        <div class="card-body">
+          <h4 class="heading" style="color:#F66962"><i class="bi bi-microsoft-teams me-2"></i>Team Details</h4>
+          <hr>
+          <div class="team-details">
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Name</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.teamName %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Team ID</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.teamId %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Number of Members</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.numberOfMember %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Team leader name</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.teamLeader.name %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Team leader phone</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.teamLeader.phone %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Registration date</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= registrationDate %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Team leader ID</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.teamLeader.instituteId %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Status</label>
+              <p class="col-6 col-md-8 m-0">
+                <% if (hacker.status==="pending" ) { %>
+                  <span class="badge rounded-pill text-bg-danger">Pending</span>
+                  <% } else { %>
+                    <span class="badge rounded-pill text-bg-success">Verified</span>
+                    <% } %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h4 class="heading" style="color:#F66962"><i class="bi bi-buildings-fill me-2"></i>Institute Details</h4>
+          <hr>
+          <div class="institute-details">
+            <div class="d-flex">
+              <label class="col-4 fw-semibold pe-1">Name</label>
+              <p class="col-8 m-0">
+                <%= hacker.instituteName %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-4 fw-semibold pe-1">Address</label>
+              <p class="col-8 m-0">
+                <%= hacker.instituteAddress %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h4 class="heading" style="color:#F66962"><i class="bi bi-people-fill me-2"></i>Team Members Details</h4>
+          <hr>
+          <% if (hacker && hacker.teamMembers) { %>
+            <% hacker.teamMembers.forEach(function(item) { %>
+              <div class="members-details">
+                <div class="d-flex">
+                  <label class="col-6 col-md-4 fw-semibold pe-1">Name</label>
+                  <p class="col-6 col-md-8 m-0">
+                    <%= item.name %>
+                  </p>
+                </div>
+
+                <div class="d-flex">
+                  <label class="col-6 col-md-4 fw-semibold pe-1">Phone</label>
+                  <p class="col-6 col-md-8 m-0">
+                    <%= item.phone %>
+                  </p>
+                </div>
+
+                <div class="d-flex">
+                  <label class="col-6 col-md-4 fw-semibold pe-1">Student/Employee ID</label>
+                  <p class="col-6 col-md-8 m-0">
+                    <%= item.instituteId %>
+                  </p>
+                </div>
+              </div>
+              <% }); %>
+                <% } else { %>
+                  <p class="col-6 m-0">No team members available.</p>
+                  <% } %>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h4 class="heading" style="color:#F66962"><i class="bi bi-gear-wide-connected me-2"></i>Domain</h4>
+          <hr>
+          <div class="domain">
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Name</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.domains %>
+              </p>
+            </div>
+
+            <div class="d-flex">
+              <label class="col-6 col-md-4 fw-semibold pe-1">Tools required</label>
+              <p class="col-6 col-md-8 m-0">
+                <%= hacker.toolName %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h4 class="heading" style="color:#F66962"><i class="bi bi-receipt me-2"></i>Transaction</h4>
+          <hr>
+          <div class="transaction">
+            <div class="d-flex">
+              <label class="col-4 fw-semibold pe-1">UTR</label>
+              <p class="col-8 m-0">
+                <%= hacker.upiNumber %>
+              </p>
+            </div>
+
+            <div class="d-block">
+              <p class="fw-semibold pe-1">Receipt</p>
+              <img src="../<%= hacker.transactionImage %>" alt="Transaction Receipt" style="max-width:320px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Include jQuery -->
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+
+  <!-- Bootstrap Core JS -->
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="../assets/js/owl.carousel.min.js"></script>
+
+  <!-- Slick Slider JS -->
+  <script src="../assets/plugins/slick/slick.min.js"></script>
+
+  <!-- Select2 JS -->
+  <script src="../assets/plugins/select2/js/select2.min.js"></script>
+
+  <!-- Aos JS -->
+  <script src="../assets/plugins/aos/aos.js"></script>
+
+  <!-- counterup JS -->
+  <script src="../assets/js/jquery.waypoints.js"></script>
+  <script src="../assets/js/jquery.counterup.min.js"></script>
+
+  <!-- DataTables JS -->
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+  <!-- DataTables Buttons JS -->
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+
+  <!-- Toastr JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+  <!-- Custom Script -->
+  <script src="../assets/js/script.js"></script>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+
+</html>
